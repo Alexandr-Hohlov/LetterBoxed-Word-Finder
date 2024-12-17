@@ -19,6 +19,12 @@ H           I
 M           P
   S   B   A
 
+  
+There might also be a letter limit (4 letters minimum?)
+THIN is a valid word
+PIE is NOT a valid word (Uses consecutive letters from the same side)
+
+
 - Will a Regex work for solving this?
 - Maybe a bunch of regexes?  
 
@@ -35,6 +41,15 @@ From S1 - T
 From S2 - H
 From S3 - I
 From S1 - N
+
+Algorithms for solving the whole box:
+- Always pick the word that uses the most unique letters (out of the letters that are left)
+
+- Pick 2 words that use up all the letters between them, then find a connecting word between those 2
+-> Might not always be possible? Might need 3 words that use up all the letters
+
+- Some kind of Brute force algorithm
+
 """
 
 # This probably works???
@@ -43,10 +58,10 @@ From S1 - N
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = ['T', 'R', 'N']
-s1 = ['F', 'H', 'M']
-s2 = ['E', 'I', 'P']
-s3 = ['S', 'B', 'A']
+s0 = ['K', 'G', 'R']
+s1 = ['C', 'H', 'O']
+s2 = ['N', 'T', 'A']
+s3 = ['W', 'I', 'D']
 
 box = [s0, s1, s2, s3]
 box_flat = s0 + s1 + s2 + s3
@@ -81,7 +96,7 @@ with open("scrabble_dictionary.txt", "r") as f:
         if valid_word == True:
             final_list.append(w + "\n")
 
-with open("output.txt", "r+") as f:
+with open("output.txt", "w") as f:
     f.writelines(sorted(final_list, key=len))
     
 
