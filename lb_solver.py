@@ -58,10 +58,10 @@ Algorithms for solving the whole box:
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = ['K', 'G', 'R']
-s1 = ['C', 'H', 'O']
-s2 = ['N', 'T', 'A']
-s3 = ['W', 'I', 'D']
+s0 = ['G', 'N', 'A']
+s1 = ['I', 'Y', 'J']
+s2 = ['R', 'K', 'P']
+s3 = ['O', 'C', 'T']
 
 box = [s0, s1, s2, s3]
 box_flat = s0 + s1 + s2 + s3
