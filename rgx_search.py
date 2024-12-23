@@ -1,6 +1,6 @@
 import re
 
-rgx = "^O.[G].$"
+rgx = "^N.*[V].*$"
 
 with open("output.txt", "r") as f:
     for word in f.readlines():

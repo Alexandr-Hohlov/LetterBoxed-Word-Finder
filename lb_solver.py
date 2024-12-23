@@ -58,10 +58,15 @@ Algorithms for solving the whole box:
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = ['G', 'N', 'A']
-s1 = ['I', 'Y', 'J']
-s2 = ['R', 'K', 'P']
-s3 = ['O', 'C', 'T']
+s0 = "IOY"
+s1 = "TAP"
+s2 = "VED"
+s3 = "RUN"
+
+#s0 = ['G', 'N', 'A']
+#s1 = ['I', 'Y', 'J']
+#s2 = ['R', 'K', 'P']
+#s3 = ['O', 'C', 'T']
 
 box = [s0, s1, s2, s3]
 box_flat = s0 + s1 + s2 + s3
