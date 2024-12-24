@@ -50,6 +50,13 @@ Algorithms for solving the whole box:
 
 - Some kind of Brute force algorithm
 
+
+Really good strategy perhaps?
+-> See if there is one word that uses all 12 letters
+-> See if there are two words that use all 12 letters
+-> see if there are three words that use all 12 letters
+-> Ideally the words should be connected?
+
 """
 
 # This probably works???
@@ -58,10 +65,10 @@ Algorithms for solving the whole box:
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = "IOY"
-s1 = "TAP"
-s2 = "VED"
-s3 = "RUN"
+s0 = "ETN"
+s1 = "OSB"
+s2 = "VAL"
+s3 = "WHU"
 
 #s0 = ['G', 'N', 'A']
 #s1 = ['I', 'Y', 'J']
