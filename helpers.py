@@ -27,3 +27,6 @@ def find_most_unique_letters(file: str):
 print("words with most unique letters:")
 for x in find_most_unique_letters(output):
     print(x)
+
+# Maybe after this, update output.txt with a new list that contains words with the remaining letters, then:
+# find the one that uses the most unique remaining letters.
