@@ -50,7 +50,7 @@ def find_connected_words(file: str):
 
     for w1 in wordlist:
         for w2 in wordlist:
-            if len(set(w1.rstrip() + w2.rstrip())) == 12 and w1.rstrip()[-1] == w2.rstrip()[0]:
+            if w1.rstrip()[-1] == w2.rstrip()[0] and len(set(w1.rstrip() + w2.rstrip())) == 12:
                 print(w1.rstrip() + "  " + w2.rstrip())
     return solutions
 

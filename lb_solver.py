@@ -65,10 +65,10 @@ Really good strategy perhaps?
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = "ETN"
-s1 = "OSB"
-s2 = "VAL"
-s3 = "WHU"
+s0 = "UBW"
+s1 = "NYR"
+s2 = "QSG"
+s3 = "IAL"
 
 #s0 = ['G', 'N', 'A']
 #s1 = ['I', 'Y', 'J']
