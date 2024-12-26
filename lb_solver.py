@@ -57,6 +57,16 @@ Really good strategy perhaps?
 -> see if there are three words that use all 12 letters
 -> Ideally the words should be connected?
 
+
+Make it work as a Command Line Utility:
+
+py lb_solver.py abc def ghi jkl
+^
+Something like that
+-> Will try to solve in 2 words, then 3, then 4, and etc...
+-> If slow, try multithreading?
+   -> Maybe try it anyway?
+
 """
 
 # This probably works???
