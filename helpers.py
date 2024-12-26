@@ -40,7 +40,6 @@ If that word + a connected word take up all 12 unique letters - Print them?
 
 """
 
-print("------- 2 Word Solutions -------")
 def find_connected_words(file: str):
     wordlist = []
     solutions = []
@@ -48,6 +47,12 @@ def find_connected_words(file: str):
     with open(file, "r") as f:
         wordlist = f.readlines()
 
+    print("------- 1 Word Solutions -------")
+    for w1 in wordlist:
+        if len(set(w1.rstrip())) == 12:
+            print(w1.rstrip())
+
+    print("------- 2 Word Solutions -------")
     for w1 in wordlist:
         for w2 in wordlist:
             if w1.rstrip()[-1] == w2.rstrip()[0] and len(set(w1.rstrip() + w2.rstrip())) == 12:

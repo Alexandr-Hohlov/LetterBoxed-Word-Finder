@@ -75,10 +75,10 @@ Something like that
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = "UBW"
-s1 = "NYR"
-s2 = "QSG"
-s3 = "IAL"
+s0 = "HWU"
+s1 = "RAI"
+s2 = "FKG"
+s3 = "ESB"
 
 #s0 = ['G', 'N', 'A']
 #s1 = ['I', 'Y', 'J']
