@@ -69,16 +69,68 @@ Something like that
 
 """
 
+import sys
+
+def find_connected_words(file: str):
+    wordlist = []
+    # Return a list of solutions instead of print???
+    solutions = []
+    
+    with open(file, "r") as f:
+        wordlist = f.readlines()
+
+    print("------- 1 Word Solutions -------")
+    for w1 in wordlist:
+        if len(set(w1.rstrip())) == 12:
+            print(w1.rstrip())
+
+    print("------- 2 Word Solutions -------")
+    for w1 in wordlist:
+        for w2 in wordlist:
+            if w1.rstrip()[-1] == w2.rstrip()[0] and len(set(w1.rstrip() + w2.rstrip())) == 12:
+                print(w1.rstrip() + "  " + w2.rstrip())
+
+
+# Maybe output a list of words if there are ties
+def find_most_unique_letters(file: str):
+    most_unique_letters = 0
+    current_words = []
+    with open(file, "r") as f:
+        for word in f.readlines():
+            num_unique = len(set(word))
+
+            if num_unique > most_unique_letters:
+                current_words  = [word.rstrip()]
+                most_unique_letters = num_unique
+
+            elif num_unique == most_unique_letters:
+                current_words.append(word.rstrip())
+    
+    return current_words
+
+output = "output.txt"
+
 # This probably works???
 # s0 = ['TRN']
 # s1 = ['FHM']
 # s2 = ['EIP']
 # s3 = ['SBA']
 
-s0 = "HWU"
-s1 = "RAI"
-s2 = "FKG"
-s3 = "ESB"
+
+# Command Line Arguments:
+# py lb_solver.py abc def ghi jkl
+
+if len(sys.argv) == 5:
+    s0 = sys.argv[1].upper()
+    s1 = sys.argv[2].upper()
+    s2 = sys.argv[3].upper()
+    s3 = sys.argv[4].upper()
+
+else:
+    s0 = "ZMC"
+    s1 = "GHA"
+    s2 = "NTI"
+    s3 = "SRO"
 
 #s0 = ['G', 'N', 'A']
 #s1 = ['I', 'Y', 'J']
@@ -118,9 +170,12 @@ with open("scrabble_dictionary.txt", "r") as f:
         if valid_word == True:
             final_list.append(w + "\n")
 
-with open("output.txt", "w") as f:
+with open(output, "w") as f:
     f.writelines(sorted(final_list, key=len))
-    
 
-          
+print("words with most unique letters:")
+for x in find_most_unique_letters(output):
+    print(x)
+
+find_connected_words(output)
 
