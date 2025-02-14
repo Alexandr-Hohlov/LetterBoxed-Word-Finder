@@ -75,7 +75,8 @@ def find_connected_words(file: str):
     wordlist = []
     # Return a list of solutions instead of print???
     solutions = []
-    
+    solved = 0
+
     with open(file, "r") as f:
         wordlist = f.readlines()
 
@@ -83,13 +84,25 @@ def find_connected_words(file: str):
     for w1 in wordlist:
         if len(set(w1.rstrip())) == 12:
             print(w1.rstrip())
+            solved = 1
 
     print("------- 2 Word Solutions -------")
     for w1 in wordlist:
         for w2 in wordlist:
             if w1.rstrip()[-1] == w2.rstrip()[0] and len(set(w1.rstrip() + w2.rstrip())) == 12:
                 print(w1.rstrip() + "  " + w2.rstrip())
-
+                solved = 1
+    
+    if solved == 0:
+        print("------- 3 Word Solutions -------")
+        for w1 in wordlist:
+            for w2 in wordlist:
+                for w3 in wordlist:
+                    first_connection = w1.rstrip()[-1] == w2.rstrip()[0]
+                    second_connection = w2.rstrip()[-1] == w3.rstrip()[0]
+                    if first_connection and second_connection and len(set(w1.rstrip() + w2.rstrip() + w3.rstrip())) == 12:
+                        print(w1.rstrip() + "  " + w2.rstrip() + "  " + w3.rstrip())
+                        solved = 1
 
 # Maybe output a list of words if there are ties
 def find_most_unique_letters(file: str):
